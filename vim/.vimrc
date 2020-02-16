@@ -30,6 +30,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'chrisbra/csv.vim'
 
 if has('nvim')
     Plug 'autozimu/LanguageClient-neovim', {
@@ -243,6 +244,12 @@ nmap <down> gj
 vmap <up> gk
 vmap <down> gj
 
+" Swap j with gj and k with gk
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
+
 " Move lines up and down using Alt+J and Alt+K (works in all modes)
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -295,7 +302,7 @@ if has('nvim')
 endif
 
 " Copy to X clipboard
-vmap <C-c> "*y
+vmap <C-c> "+y
 
 " Paste from X clipboard
 vmap <Insert> d"*p
