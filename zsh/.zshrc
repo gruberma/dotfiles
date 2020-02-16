@@ -74,6 +74,8 @@ alias whoneeds='pacman -Qi'
 alias T="$TERMCMD 2>&1 > /dev/null &!"
 alias o="rifle"
 alias mdstat='cat /proc/mdstat'
+alias op="gio open"
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 #}}}
 
 # vim:foldmethod=marker
