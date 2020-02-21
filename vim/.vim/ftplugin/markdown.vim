@@ -3,5 +3,6 @@ if has('nvim')
 endif
 set colorcolumn&
 set textwidth&
+set spelllang=en_us,de_de
 set spell
 autocmd FileType markdown UltiSnipsAddFiletypes tex
