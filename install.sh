@@ -32,7 +32,7 @@ mkdir -p "$HOME/.config"
 #stow --target "$HOME"              bat
 #stow --target "$HOME"              compton
 #stow --target "$HOME"              dunst
-#stow --target "$HOME"              ghci
+#stow --target "$HOME" --no-folding haskell
 #stow --target "$HOME"              git
 #stow --target "$HOME"              greenclip
 #stow --target "$HOME"              i3
@@ -44,10 +44,20 @@ mkdir -p "$HOME/.config"
 #stow --target "$HOME"              rofi
 #stow --target "$HOME" --no-folding scripts
 #stow --target "$HOME"              termite
-#stow --target "$HOME"              tmux
+#stow --target "$HOME" --no-folding tmux
 #stow --target "$HOME" --no-folding vim
 #stow --target "$HOME"              vimiv
 #stow --target "$HOME"              xorg
 #stow --target "$HOME"              ytcc
 #stow --target "$HOME"              zathura
-#stow --target "$HOME"              zsh
+#stow --target "$HOME" --no-folding zsh
+
+#stow --target "$HOME" --no-folding vscode;
+#cat << EOF | xargs -L1 code --install-extension
+#DavidAnson.vscode-markdownlint
+#EditorConfig.EditorConfig
+#mrworkman.papercolor-vscode-redux
+#ms-python.python
+#RomanPeshkov.vscode-text-tables
+#vscodevim.vim
+#EOF
