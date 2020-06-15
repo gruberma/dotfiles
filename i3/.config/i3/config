@@ -146,20 +146,18 @@ mode $sysmenu {
 }
 bindsym $mod+Delete mode $sysmenu
 
-set $mode_display "External Screen: (a) above, (d) duplicate, (r) reset"
+set $mode_display "External Screen: (a) above, (m) mirror, (d) dock, (r) reset"
 mode $mode_display {
-    bindsym a exec --no-startup-id $HOME/.local/bin/monitor.sh above     && $HOME/.fehbg && $XDG_CONFIG_HOME/polybar/launch.sh, mode "default"
-    bindsym d exec --no-startup-id $HOME/.local/bin/monitor.sh duplicate && $HOME/.fehbg && $XDG_CONFIG_HOME/polybar/launch.sh, mode "default"
-    bindsym r exec --no-startup-id $HOME/.local/bin/monitor.sh reset     && $HOME/.fehbg && $XDG_CONFIG_HOME/polybar/launch.sh, mode "default"
+    bindsym a exec --no-startup-id $HOME/.local/bin/monitor.sh above,  mode "default"
+    bindsym m exec --no-startup-id $HOME/.local/bin/monitor.sh mirror, mode "default"
+    bindsym d exec --no-startup-id $HOME/.local/bin/monitor.sh dock,   mode "default"
+    bindsym r exec --no-startup-id $HOME/.local/bin/monitor.sh reset,  mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym XF86Display mode $mode_display
 bindsym $mod+s mode $mode_display
-
-bindsym $mod+d exec --no-startup-id $HOME/.local/bin/dock
-bindsym $mod+Shift+d exec --no-startup-id $HOME/.local/bin/undock
 
 # Start rofi
 bindsym $mod+p exec --no-startup-id rofi -show drun
@@ -180,19 +178,21 @@ bindsym $mod+$alt+m exec $term_cmd -e mocp
 bindsym $mod+$alt+c exec chromium --incognito
 bindsym $mod+$alt+p exec keepassxc $HOME/sync/passwords.kdbx
 bindsym $mod+$alt+t exec telegram-desktop
-bindsym $mod+$alt+Return exec $term_cmd --class tmuxdrop -e 'tmux new-session -A -s drop'
-
 bindsym Print exec xfce4-screenshooter
 
 # Vim notes
 set $notes alacritty --class vimnotes -e nvim -c 'cd $HOME/sync/Notes' $HOME/sync/Notes/TODO.md
-exec $notes
+exec --no-startup-id $notes
 bindsym $mod+Shift+n exec $notes
 bindsym $mod+$alt+n [instance="vimnotes"] scratchpad show
 for_window [instance="vimnotes"] move scratchpad
 
-# Toggle touchpad on/off
-bindsym $mod+Control+t exec --no-startup-id synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
+# Tmux "dropdown" terminal
+set $drop alacritty --class tmuxdrop -e tmux -f $HOME/.config/tmux/tmux.conf new-session -A -s drop
+exec --no-startup-id $drop
+bindsym $mod+$alt+Return exec $drop
+bindsym $mod+asciicircum [instance="tmuxdrop"] scratchpad show
+for_window [instance="tmuxdrop"] move scratchpad
 
 # Multimedia controls
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5%
@@ -223,7 +223,6 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [class="pinentry"] floating enable
 for_window [class="TelegramDesktop"] floating enable
-for_window [class="tmuxdrop"] fullscreen enable
 for_window [class="Signal"] floating enable
 for_window [title="(Android |)Emulator(.*)"] floating enable
 
