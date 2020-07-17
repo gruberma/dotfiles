@@ -57,7 +57,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
-"Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 "Plug 'rakr/vim-one'
 "Plug 'tomasr/molokai'
 "Plug 'reedes/vim-colors-pencil'
@@ -351,8 +351,6 @@ set guioptions-=e  "remove ugly tab bar
 
 set guifont=Hack\ 9
 set termguicolors
-set background=light
-colorscheme PaperColor
 "highlight Cursor guibg=#65ff51
 
 
@@ -524,3 +522,22 @@ map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>lb :call LanguageClient#textDocument_references()<CR>
 map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+
+
+let g:next_theme = 'dark'
+
+" Toggle light-dark theme
+function ToggleBackgroundColor ()
+    if (g:next_theme == 'dark')
+        colorscheme base16-onedark
+        let g:next_theme = 'light'
+    else
+        colorscheme PaperColor
+        set background=light
+        let g:next_theme = 'dark'
+    endif
+endfunction
+
+call ToggleBackgroundColor()
+
+map <F1> :call ToggleBackgroundColor()<CR>
