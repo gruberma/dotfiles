@@ -32,6 +32,20 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'chrisbra/csv.vim'
+Plug 'masukomi/vim-markdown-folding'
+
+" vim markdown folding
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+" Remember folding
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
