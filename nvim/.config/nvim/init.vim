@@ -256,8 +256,6 @@ nmap <up> gk
 nmap <down> gj
 vmap <up> gk
 vmap <down> gj
-
-" Swap j with gj and k with gk
 nnoremap j gj
 nnoremap gj j
 nnoremap k gk
@@ -524,9 +522,9 @@ map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
 
+" Toggle light-dark theme
 let g:next_theme = 'dark'
 
-" Toggle light-dark theme
 function ToggleBackgroundColor ()
     if (g:next_theme == 'dark')
         colorscheme base16-onedark
