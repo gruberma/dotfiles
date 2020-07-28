@@ -32,6 +32,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'chrisbra/csv.vim'
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'masukomi/vim-markdown-folding'
 
 " vim markdown folding
