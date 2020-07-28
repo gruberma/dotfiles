@@ -35,19 +35,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'masukomi/vim-markdown-folding'
 
-" vim markdown folding
-set nocompatible
-if has("autocmd")
-  filetype plugin indent on
-endif
-
-" Remember folding
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
-
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
 \ 'do': './install.sh',
@@ -538,5 +525,18 @@ function ToggleBackgroundColor ()
 endfunction
 
 call ToggleBackgroundColor()
-
 map <F1> :call ToggleBackgroundColor()<CR>
+
+" vim markdown folding
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+" Remember folding
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
