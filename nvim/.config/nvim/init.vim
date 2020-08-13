@@ -511,20 +511,33 @@ map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
 
 " Toggle light-dark theme
-let g:next_theme = 'dark'
+let g:color_theme_file = '~/.config/nvim/color_theme.txt'
+let g:color_theme = system('head -c 4 ' . g:color_theme_file)
 
-function ToggleBackgroundColor ()
-    if (g:next_theme == 'dark')
+function UpdateBackgroundColor()
+    let g:color_theme = system('head -c 4 ' . g:color_theme_file)
+    if (g:color_theme == 'dark')
         colorscheme base16-onedark
-        let g:next_theme = 'light'
     else
         colorscheme PaperColor
         set background=light
-        let g:next_theme = 'dark'
     endif
 endfunction
 
-call ToggleBackgroundColor()
+function ToggleBackgroundColor ()
+    if (g:color_theme == 'dark')
+        " let g:color_theme = 'light'
+        " !echo light > g:color_theme_file
+        echo system('echo light > ' . g:color_theme_file)
+    else
+        " let g:color_theme = 'dark'
+        " !echo dark > g:color_theme_file
+        echo system('echo dark > ' . g:color_theme_file)
+    endif
+    call UpdateBackgroundColor()
+endfunction
+
+call UpdateBackgroundColor()
 map <F1> :call ToggleBackgroundColor()<CR>
 
 " vim markdown folding
