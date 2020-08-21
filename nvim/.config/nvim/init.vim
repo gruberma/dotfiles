@@ -33,7 +33,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'chrisbra/csv.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-Plug 'masukomi/vim-markdown-folding'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
@@ -539,12 +538,6 @@ endfunction
 
 call UpdateBackgroundColor()
 map <F1> :call ToggleBackgroundColor()<CR>
-
-" vim markdown folding
-set nocompatible
-if has("autocmd")
-  filetype plugin indent on
-endif
 
 " Remember folding
 augroup remember_folds
