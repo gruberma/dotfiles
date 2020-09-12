@@ -80,7 +80,7 @@ alias whoneeds='pacman -Qi'
 alias T="$TERMCMD 2>&1 > /dev/null &!"
 alias o="rifle"
 alias mdstat='cat /proc/mdstat'
-alias op="gio open"
+alias op="xdg-open"
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 export CLASSPATH=".:$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
