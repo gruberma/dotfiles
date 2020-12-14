@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import re
+import sys
+
+pattern = sys.argv[1]
+file_ = sys.argv[2]
+s = open(file_).read()
+
+m = re.findall(pattern, s, flags=re.MULTILINE)
+
+for x in m:
+    print(x)

@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+import pickle
+import sys
+
+_, type_, str_value = sys.argv
+value = eval(f"{type_}(str_value)")
+print(pickle.dumps(value))
+
