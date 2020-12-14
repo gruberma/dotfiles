@@ -494,7 +494,7 @@ let g:deoplete#enable_at_startup = 1
 " LanguageClient config
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
-    \ 'python': ['/usr/bin/pyls'],
+    \ 'python': ['pyls'],
     \}
 let g:LanguageClient_rootMarkers = {
     \ 'haskell': ['*.cabal', 'stack.yaml'],
