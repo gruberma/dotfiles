@@ -29,3 +29,9 @@ To update the dotfiles pull this repo including its submodules.
 ```
 git pull --recurse-submodules
 ```
+
+## Installing dependencies
+
+```shell
+pip install python-language-server
+```
