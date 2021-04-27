@@ -540,10 +540,12 @@ endfunction
 call UpdateBackgroundColor()
 map <F1> :call ToggleBackgroundColor()<CR>
 
-" Remember folding
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+" " Remember folding
+" augroup remember_folds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent! loadview
+" augroup END
 
+" Search visualized text via '//'
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
