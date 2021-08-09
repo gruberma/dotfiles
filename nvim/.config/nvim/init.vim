@@ -249,6 +249,11 @@ nnoremap j gj
 nnoremap gj j
 nnoremap k gk
 nnoremap gk k
+" only in visual select mode, not in visual line mode
+xnoremap <expr> j  mode() ==# "v" ? "gj" : "j"
+xnoremap <expr> gj mode() ==# "v" ? "j"  : "j"
+xnoremap <expr> k  mode() ==# "v" ? "gk" : "k"
+xnoremap <expr> gk mode() ==# "v" ? "k"  : "gk"
 
 " Move lines up and down using Alt+J and Alt+K (works in all modes)
 nnoremap <C-j> :m .+1<CR>==
