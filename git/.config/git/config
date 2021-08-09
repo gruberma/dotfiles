@@ -18,3 +18,22 @@
 
 [include]
     path = ~/.config/git/config.local
+[user]
+	email = 
+	name = 
+
+[difftool "diffpdf"]
+    cmd = diff-pdf --view \"$LOCAL\" \"$REMOTE\"
+
+[pull]
+    ff = only
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[https]
+	proxy = 
+[http]
+	proxy = 

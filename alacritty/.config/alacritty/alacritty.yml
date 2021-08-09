@@ -29,7 +29,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
+    x: 4
     y: 0
 
   # Spread additional padding evenly around the terminal content.
@@ -46,6 +46,9 @@ window:
 
   # Window class (Linux only):
   #class: Alacritty
+
+  # allow terminal applications to change alacritty's window title.
+  dynamic_title: true
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -161,9 +164,11 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
+  #command:
+  #  program: notify-send
   color: '0xffffff'
 
 # Background opacity
@@ -200,36 +205,11 @@ mouse:
   triple_click: { threshold: 300 }
   hide_when_typing: false
 
-  url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a URL.
-    # The URL is always added to the command as the last parameter.
-    #
-    # When set to `None`, URL launching will be disabled completely.
-    #
-    # Default:
-    #   - (macOS) open
-    #   - (Linux) xdg-open
-    #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
-    #  args: []
-
-    # URL modifiers
-    #
-    # These are the modifiers that need to be held down for opening URLs when clicking
-    # on them. The available modifiers are documented in the key binding section.
-    modifiers: None
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
-
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style
@@ -399,15 +379,14 @@ debug:
 #   - AppKeypad
 key_bindings:
   # (Windows/Linux only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
+  - { key: V,              mods: Control|Shift, action: Paste            }
+  - { key: C,              mods: Control|Shift, action: Copy             }
+  - { key: Insert,         mods: Shift,         action: PasteSelection   }
+  - { key: Key0,           mods: Control,       action: ResetFontSize    }
+  - { key: Equals,         mods: Control,       action: IncreaseFontSize }
+  - { key: NumpadAdd,      mods: Control,       action: IncreaseFontSize }
+  - { key: NumpadSubtract, mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,          mods: Control,       action: DecreaseFontSize }
 
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
