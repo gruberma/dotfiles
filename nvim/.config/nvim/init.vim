@@ -34,6 +34,7 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'chrisbra/csv.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'alaviss/nim.nvim', { 'for': 'nim' }
+Plug 'rhysd/vim-grammarous'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
