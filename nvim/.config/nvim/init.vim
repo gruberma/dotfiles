@@ -555,3 +555,9 @@ map <F1> :call ToggleBackgroundColor()<CR>
 
 " Search visualized text via '//'
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" Jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
