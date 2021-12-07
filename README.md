@@ -33,5 +33,5 @@ git pull --recurse-submodules
 ## Installing dependencies
 
 ```shell
-pip install python-language-server
+pip install python-language-server pynvim
 ```
