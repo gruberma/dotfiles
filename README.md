@@ -35,3 +35,8 @@ git pull --recurse-submodules
 ```shell
 pip install python-language-server pynvim
 ```
+
+
+## Install on Windows
+
+vimrc location: `~\AppData\Local\nvim\init.vim`
