@@ -23,7 +23,7 @@
 	name = 
 
 [difftool "diffpdf"]
-    cmd = diff-pdf --view \"$LOCAL\" \"$REMOTE\"
+    cmd = diff-pdf -m --view \"$LOCAL\" \"$REMOTE\"
 
 [pull]
     ff = only
