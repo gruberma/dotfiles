@@ -35,6 +35,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'alaviss/nim.nvim', { 'for': 'nim' }
 Plug 'rhysd/vim-grammarous'
+Plug 'vim-scripts/restore_view.vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
@@ -547,18 +548,6 @@ endfunction
 call UpdateBackgroundColor()
 map <F1> :call ToggleBackgroundColor()<CR>
 
-" " Remember folding
-" augroup remember_folds
-"   autocmd!
-"   autocmd BufWinLeave * mkview
-"   autocmd BufWinEnter * silent! loadview
-" augroup END
-
 " Search visualized text via '//'
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-" Jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
