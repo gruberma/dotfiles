@@ -466,6 +466,9 @@ let g:vimtex_view_method = 'zathura'
 " TODO
 "let g:vimtex_compiler_progname = '/usr/bin/nvr'
 
+" no spelling in comments
+let g:tex_comment_nospell=1
+
 "set filetype=tex on empty tex files.
 let g:tex_flavor='latex'
 
