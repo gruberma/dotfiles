@@ -48,9 +48,13 @@ bindkey -M main '^[OB' history-substring-search-down
 bindkey -M main '^[[A' history-substring-search-up
 bindkey -M main '^[[B' history-substring-search-down
 bindkey -M vicmd '^k' history-substring-search-up
+bindkey -M vicmd '^p' history-substring-search-up
 bindkey -M vicmd '^j' history-substring-search-down
+bindkey -M vicmd '^n' history-substring-search-down
 bindkey '^k' history-substring-search-up
+bindkey '^p' history-substring-search-up
 bindkey '^j' history-substring-search-down
+bindkey '^n' history-substring-search-down
 
 # autosuggest plugin
 bindkey '^ ' autosuggest-accept
