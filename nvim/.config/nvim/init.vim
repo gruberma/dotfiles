@@ -521,6 +521,11 @@ map <Leader>lb :call LanguageClient#textDocument_references()<CR>
 map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+" Sort by order within file, not alphabetically
+let g:tagbar_sort = 0
+
 
 " Toggle light-dark theme
 let g:color_theme_file = '~/.config/nvim/color_theme.txt'
