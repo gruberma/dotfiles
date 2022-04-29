@@ -87,6 +87,14 @@ alias mdstat='cat /proc/mdstat'
 alias op="xdg-open"
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias csv='vd --filetype=csv'
+alias pyxmlformat='python3 -c "
+import sys
+import xml.dom.minidom
+if len(sys.argv) == 1:
+    print(xml.dom.minidom.parse(sys.stdin).toprettyxml())
+else:
+    print(xml.dom.minidom.parse(sys.argv[1]).toprettyxml())"'
+
 
 export CLASSPATH=".:$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
 alias antlr4='java -Xmx500M -cp "$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
