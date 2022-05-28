@@ -129,8 +129,8 @@ set visualbell
 " is unset, this does nothing.
 set t_vb=
 
-" Disable mouse
-set mouse=
+" Enable mouse
+set mouse=a
 
 " Display line numbers on the left
 set number
