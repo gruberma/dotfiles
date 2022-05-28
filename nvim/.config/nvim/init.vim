@@ -560,3 +560,6 @@ map <F1> :call ToggleBackgroundColor()<CR>
 " Search visualized text via '//'
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
