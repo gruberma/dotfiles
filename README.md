@@ -36,6 +36,14 @@ git pull --recurse-submodules
 pip install python-language-server pynvim
 ```
 
+from distro package management
+```
+exa
+exuberant-ctags
+fzf
+fd
+```
+
 
 ## Install on Windows
 
