@@ -37,6 +37,7 @@ Plug 'alaviss/nim.nvim', { 'for': 'nim' }
 Plug 'rhysd/vim-grammarous'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'preservim/tagbar'
+Plug 'PeterRincker/vim-argumentative'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
