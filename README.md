@@ -32,16 +32,18 @@ git pull --recurse-submodules
 
 ## Installing dependencies
 
-```shell
-pip install python-language-server pynvim
+from distro package management (Ubuntu)
 ```
-
-from distro package management
-```
+neovim
+python3-pip
 exa
 exuberant-ctags
 fzf
-fd
+fd-find
+```
+
+```shell
+pip install ranger-fm python-language-server pynvim virtualenv
 ```
 
 
