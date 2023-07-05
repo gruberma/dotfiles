@@ -4,6 +4,8 @@
     cm = commit
     st = status
     co = checkout
+    cp = cherry-pick
+    can = commit --amend --no-edit
     diffs = diff --staged
     diffw = diff --color-words
     diffsw = diff --color-words --staged
@@ -27,6 +29,17 @@
 
 [pull]
     ff = only
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+    default = current
+
+[branch]
+    autosetuprebase = always
+
+[fetch]
+    prune = true
 
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -37,3 +50,5 @@
 	proxy = 
 [http]
 	proxy = 
+[remote "origin"]
+	prune = true
