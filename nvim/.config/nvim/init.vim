@@ -24,7 +24,7 @@ Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 "Plug 'junegunn/fzf'  " On Archlinux this plugin is installed globally when installing fzf
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -38,6 +38,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'preservim/tagbar'
 Plug 'PeterRincker/vim-argumentative'
+Plug 'Asheq/close-buffers.vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
@@ -563,4 +564,7 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
+
+" close buffer without closing window
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
