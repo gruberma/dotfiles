@@ -39,7 +39,9 @@ python3-pip
 exa
 exuberant-ctags
 fzf
+ripgrep
 fd-find
+bat
 ```
 
 ```shell
