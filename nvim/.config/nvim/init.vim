@@ -25,7 +25,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'godlygeek/tabular'
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-"Plug 'junegunn/fzf'  " On Archlinux this plugin is installed globally when installing fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -394,7 +394,10 @@ command! -nargs=* Rg call fzf#run({
 \ 'down':    '50%'
 \ })
 
-nnoremap <A-f> :Fd<CR>
+" window (anchored to the bottom)
+let g:fzf_layout = { 'down': '~40%' }
+
+nnoremap <A-f> :Files<CR>
 nnoremap <A-r> :Rg<CR>
 nnoremap <A-b> :Buffers<CR>
 
