@@ -289,6 +289,7 @@ nnoremap + <C-A>
 
 " Toggle NERDTree
 nnoremap <A-n> :NERDTreeToggle<CR>
+nnoremap <A-m> :NERDTreeFocus<CR>
 
 " Cycle through buffers
 nnoremap <Leader><TAB> :bnext<CR>
