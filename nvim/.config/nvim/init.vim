@@ -397,7 +397,7 @@ command! -nargs=* Rg call fzf#run({
 \ })
 
 " window (anchored to the bottom)
-let g:fzf_layout = { 'down': '~40%' }
+" let g:fzf_layout = { 'down': '~40%' }
 
 nnoremap <A-f> :Files<CR>
 nnoremap <A-r> :Rg<CR>
