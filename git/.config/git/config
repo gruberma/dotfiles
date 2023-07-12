@@ -52,3 +52,18 @@
 	proxy = 
 [remote "origin"]
 	prune = true
+
+[merge]
+    tool = nvimdiff
+    prompt = false
+
+[mergetool "nvimdiff"]
+    cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
+
+[diff]
+    tool = nvimdiff
+    prompt = false
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
