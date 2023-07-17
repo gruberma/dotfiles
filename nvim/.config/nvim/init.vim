@@ -438,6 +438,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = '␣'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#disable_refresh=1
+let g:airline_section_b = '%{airline#util#wrap(airline#extensions#hunks#get_hunks(),100)}'
 
 " vim-notes settings
 "let g:notes_directories = ['~/sync/notes']
