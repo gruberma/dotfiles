@@ -32,20 +32,8 @@ git pull --recurse-submodules
 
 ## Installing dependencies
 
-from distro package management (Ubuntu)
-```
-neovim
-python3-pip
-exa
-exuberant-ctags
-fzf
-ripgrep
-fd-find
-bat
-```
-
 ```shell
-pip install ranger-fm python-language-server pynvim virtualenv
+./ubuntu_deps_install.sh
 ```
 
 
