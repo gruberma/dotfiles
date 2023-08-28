@@ -20,11 +20,21 @@
 
 [include]
     path = ~/.config/git/config.local
-[user]
-	email = 
-	name = 
+
+[diff]
+    tool = nvimdiff
+    prompt = false
+
+[difftool]
+    prompt = false
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [difftool "diffpdf"]
+    cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+
+[difftool "diff-pdf"]
     cmd = diff-pdf -m --view \"$LOCAL\" \"$REMOTE\"
 
 [pull]
@@ -41,16 +51,16 @@
     prune = true
 
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
 [https]
-	proxy = 
+    proxy = 
 [http]
-	proxy = 
+    proxy = 
 [remote "origin"]
-	prune = true
+    prune = true
 
 [merge]
     tool = nvimdiff
@@ -58,11 +68,4 @@
 
 [mergetool "nvimdiff"]
     cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
-
-[diff]
-    tool = nvimdiff
-    prompt = false
-
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
