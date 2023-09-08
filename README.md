@@ -6,11 +6,18 @@ Wallpaper based on [Low Poly Wolf by zelda-Freak91](https://zelda-freak91.devian
 
 ## How to use it
 
+0. Setup git identity. Create a file `$HOME/.gitconfig` with the following content. (this cannot not be part of the dotfiles, otherwise pulling changes is cumbersome)
+    ```
+    [user]
+        email = EMAIL
+        name = NAME
+    ```
+
 1. Clone this repo:
 
     ```shell
-    git clone --recursive https://github.com/woefe/dotfiles.git $HOME/.dotfiles-woefe
-    cd $HOME/.dotfiles-woefe
+    git clone --recursive https://github.com/gruberma/dotfiles.git $HOME/.dotfiles
+    cd $HOME/.dotfiles
     ```
 2. Install GNU Stow:
 
@@ -21,7 +28,7 @@ Wallpaper based on [Low Poly Wolf by zelda-Freak91](https://zelda-freak91.devian
 3. Uncomment the lines in [`install.sh`](./install.sh) of dotfiles you want to install
 4. Execute `./install.sh`.
     Make sure that you run the script in the main dotfiles directory.
-    I.e change directory to `.dotfiles-woefe` first.
+    I.e change directory to `.dotfiles` first.
 
 ## Updating
 To update the dotfiles pull this repo including its submodules.
