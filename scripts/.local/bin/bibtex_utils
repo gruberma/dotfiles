@@ -76,22 +76,15 @@ def bibtex_to_df(bibtex_file: str, *, verify_urls=False) -> pd.DataFrame:
         bib_df["url_response_content"] = bib_df["url_response"].dropna().apply(lambda x: x._content)
 
     # -- Reorder cols
-    # front_cols = ["ID", "ENTRYTYPE", "title", "author", "booktitle", "journal", "month", "year"]
-    # other_cols = [col for col in bib_df.columns if col not in front_cols]
-    # bib_df = bib_df[front_cols + other_cols]
+    front_cols = ["ID", "ENTRYTYPE", "title", "author", "booktitle", "journal", "year"]
+    if set(front_cols).issubset(bib_df.columns):
+        other_cols = [col for col in bib_df.columns if col not in front_cols]
+        bib_df = bib_df[front_cols + other_cols]
+    else:
+        logging.info("Could not reorder columns")
 
     return bib_df
 
-
-def foo(hello: str, world: int):
-    """TODO: Docstring for foo.
-
-    :hello: TODO
-    :world: TODO
-    :returns: TODO
-
-    """
-    pass
 
 def merge_cites_in_dir_with_bibtex(bib_file: str = None, dir_: str = None, verify_urls: bool = False) -> pd.DataFrame:
     """
@@ -148,9 +141,5 @@ def cli(bib_file: str = None, dir_: str = None, verify_urls=False) -> str:
     return merge_cites_in_dir_with_bibtex(bib_file, dir_).to_csv(index=False)
 
 
-
 if __name__ == "__main__":
-    # logging.getLogger().setLevel(logging.INFO)
-
     Fire(cli)
-    # Fire()
