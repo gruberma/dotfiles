@@ -574,3 +574,5 @@ vnoremap . :normal .<CR>
 " close buffer without closing window
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" Seach upward for open TODOs in Markdown notation
+nnoremap T ?- \[[^xn]\]<cr>
