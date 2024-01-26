@@ -98,3 +98,8 @@ alias grun='java -Xmx500M -cp "$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSP
 #}}}
 
 # vim:foldmethod=marker
+
+# ssh key unlock for WSL (requires kechain to be installed)
+if [[ `uname -r` == *"microsoft-standard-WSL2"* ]]; then
+    eval `keychain --eval --quiet`;
+fi
