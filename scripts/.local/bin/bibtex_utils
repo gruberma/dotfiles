@@ -62,7 +62,7 @@ def bibtex_to_df(bibtex_file: str, *, verify_urls=False) -> pd.DataFrame:
     return: pandas DataFrame
     """
 
-    bp = BibTexParser(interpolate_strings=False)
+    bp = BibTexParser(interpolate_strings=False, ignore_nonstandard_types=False)
 
     with open(bibtex_file, encoding="utf8") as related_file:
         bib_database = bp.parse_file(related_file)
