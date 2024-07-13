@@ -62,12 +62,11 @@ def bibtex_to_df(bibtex_file: str, *, verify_urls=False) -> pd.DataFrame:
     return: pandas DataFrame
     """
 
-    with open(bibtex_file, encoding="utf8") as related_file:
-        related_content = related_file.read()
-
     bp = BibTexParser(interpolate_strings=False)
-    bib_database = bp.parse(related_content)
-    bib_df = pd.DataFrame(bib_database.entries)
+
+    with open(bibtex_file, encoding="utf8") as related_file:
+        bib_database = bp.parse_file(related_file)
+        bib_df = pd.DataFrame(bib_database.entries)
 
     if verify_urls:
         logging.info("Verifing URLs")
