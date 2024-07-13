@@ -115,7 +115,7 @@ def merge_cites_in_dir_with_bibtex(
 
     logging.info("Loading bibtex database")
     if bib_file is not None:
-        bib_df = bibtex_to_df(bib_file)
+        bib_df = bibtex_to_df(bib_file, verify_urls=verify_urls)
     else:
         bib_df = pd.DataFrame(columns=["ID"])
 
