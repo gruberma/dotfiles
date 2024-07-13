@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-import os
-from typing import List
+from typing import List, Optional
 import logging
 
 import requests
@@ -85,13 +84,19 @@ def bibtex_to_df(bibtex_file: str, *, verify_urls=False) -> pd.DataFrame:
     return bib_df
 
 
-def merge_cites_in_dir_with_bibtex(bib_file: str = None, dir_: str = None, verify_urls: bool = False) -> pd.DataFrame:
+def merge_cites_in_dir_with_bibtex(
+    bib_file: Optional[str] = None,
+    dir_: Optional[str] = None,
+    verify_urls: bool = False,
+    drop_cols: Optional[List[str]] = None
+) -> pd.DataFrame:
     """
     Collects information about latex citations from a all .tex files in a directory and a bibtex file into one table.
 
     :dir_: path to directory where I will search for .tex files
     :bib_file: path to bibtex file
     :verify_urls: sends an http request to each url in the `bib_file` and reports return status code and message via new columns
+    :drop_cols: list of columns to drop
 
     :returns: pandas DataFrame containing all information from `bib_file`. Append commands to view the dataframe, e.g. `to_csv`
 
@@ -119,10 +124,19 @@ def merge_cites_in_dir_with_bibtex(bib_file: str = None, dir_: str = None, verif
 
     if "cited" in merged_df.columns:
         merged_df["cited"] = merged_df["cited"].fillna(False)
+
+    if drop_cols is not None:
+        merged_df = merged_df.drop(columns=drop_cols)
+
     return merged_df
 
 
-def cli(bib_file: str = None, dir_: str = None, verify_urls=False) -> str:
+def cli(
+    bib_file: Optional[str] = None,
+    dir_: Optional[str] = None,
+    verify_urls=False,
+    drop_cols: Optional[List[str]] = None
+) -> str:
     """
     Collects information about latex citations from (1) all .tex files in a directory and
     (2) a bibtex file, and puts them into one table.
@@ -130,6 +144,7 @@ def cli(bib_file: str = None, dir_: str = None, verify_urls=False) -> str:
     :dir_: path to directory where to search for .tex files and citations inside them
     :bib_file: path to bibtex file
     :verify_urls: sends an http request to each url in the `bib_file` and reports return status code and message via new columns
+    :drop_cols: comma-separated list of columns to drop
 
     :returns: table in CSV format containing all information from `bib_file`.
 
@@ -137,7 +152,10 @@ def cli(bib_file: str = None, dir_: str = None, verify_urls=False) -> str:
 
         `bibtex_utils BIBTEX_FILE DIR | vd --filetype=csv`
     """
-    return merge_cites_in_dir_with_bibtex(bib_file, dir_).to_csv(index=False)
+    # in some cases, fire make drop_cols a tuple, which causes issues down the line
+    if drop_cols is not None:
+        drop_cols = list(drop_cols)
+    return merge_cites_in_dir_with_bibtex(bib_file, dir_, verify_urls, drop_cols).to_csv(index=False)
 
 
 if __name__ == "__main__":
