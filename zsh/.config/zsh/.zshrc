@@ -103,3 +103,9 @@ alias grun='java -Xmx500M -cp "$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSP
 if [[ `uname -r` == *"microsoft-standard-WSL2"* ]]; then
     eval `keychain --eval --quiet`;
 fi
+
+# bookmarks
+if [ -d "$HOME/.bookmarks" ]; then
+    export CDPATH=".:$HOME/.bookmarks:/"
+    alias goto="cd -P"
+fi
