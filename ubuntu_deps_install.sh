@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
 sudo apt-get install -y \
+    curl \
+    stow \
     neovim \
     python3-pip \
-    exa \
+    eza \
     exuberant-ctags \
     fzf \
     ripgrep \
     fd-find \
     bat \
-    pipx
+    pipx \
+    zsh
 
 pipx install ranger-fm
 pipx install python-language-server
