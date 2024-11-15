@@ -576,3 +576,11 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Seach upward for open TODOs in Markdown notation
 nnoremap T ?- \[[^xn]\]<cr>
+
+" Grammarous
+let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+
+" Add shortcut for applying macro
+:nnoremap , @a
+
+
