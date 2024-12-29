@@ -2,6 +2,7 @@
 
 sudo apt-get install -y \
     curl \
+    tmux \
     stow \
     neovim \
     python3-pip \
