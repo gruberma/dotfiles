@@ -146,11 +146,11 @@ set notimeout ttimeout ttimeoutlen=100
 " terminal vim
 "set pastetoggle=<F11>
 
-" show vertical line after 100 characters
-set colorcolumn=101
+" show vertical line after 120 characters
+set colorcolumn=121
 
 " linewrapping and textwidth
-set textwidth=100
+set textwidth=120
 set formatoptions-=t
 set wrap
 set linebreak
