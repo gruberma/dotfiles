@@ -568,7 +568,7 @@ map <F1> :call ToggleBackgroundColor()<CR>
 " Search visualized text via '//'
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-" allow the . to execute once for each line of a visual selection
+" execute . once for each line of a visual selection
 vnoremap . :normal .<CR>
 
 " close buffer without closing window
@@ -582,5 +582,10 @@ let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5
 
 " Add shortcut for applying macro
 :nnoremap , @a
+:nnoremap ; @b
+
+" execute , and ; once for each line of a visual selection
+vnoremap , :normal ,<CR>
+vnoremap ; :normal ;<CR>
 
 
