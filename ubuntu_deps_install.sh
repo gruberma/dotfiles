@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt-get install -y \
+    autokey-gtk \
     curl \
     tmux \
     stow \

@@ -28,6 +28,7 @@ mkdir -p "$HOME/.config"
 #########################################################################
 
 #stow --target "$HOME"              alacritty
+#stow --target "$HOME"              autokey
 #stow --target "$HOME" --no-folding autostart
 #stow --target "$HOME"              bat
 #stow --target "$HOME"              compton
