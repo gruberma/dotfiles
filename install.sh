@@ -48,6 +48,7 @@ mkdir -p "$HOME/.config"
 #stow --target "$HOME" --no-folding scripts
 #stow --target "$HOME"              termite
 #stow --target "$HOME" --no-folding tmux
+#stow --target "$HOME"              tmuxinator
 #stow --target "$HOME"              vimiv
 #stow --target "$HOME"              vscode
 #stow --target "$HOME"              xdg

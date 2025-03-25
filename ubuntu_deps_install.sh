@@ -4,6 +4,7 @@ sudo apt-get install -y \
     autokey-gtk \
     curl \
     tmux \
+    tmuxinator \
     stow \
     neovim \
     python3-pip \
