@@ -40,6 +40,7 @@ Plug 'preservim/tagbar'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'Asheq/close-buffers.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'knsh14/vim-github-link'
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
