@@ -1,11 +1,8 @@
 {
-    "type": "script",
-    "description": "List Menu",
-    "store": {},
+    "type": "folder",
+    "title": "my_scripts",
     "modes": [],
     "usageCount": 0,
-    "prompt": false,
-    "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
