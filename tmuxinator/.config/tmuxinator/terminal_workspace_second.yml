@@ -38,7 +38,7 @@ tmux_options: -f ~/.config/tmux/tmux.conf
 # attach: false
 
 windows:
-  - notes:
+  - notes: vim notes.md
   - vpn:
   - workspace:
       root: ~/workspace/

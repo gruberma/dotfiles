@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt-get install -y \
+    alacritty \
     autokey-gtk \
     curl \
     tmux \
@@ -15,6 +16,8 @@ sudo apt-get install -y \
     fd-find \
     bat \
     pipx \
+    xdotool \
+    zathura \
     zsh
 
 pipx install ranger-fm
