@@ -1,4 +1,1 @@
-# Enter script code
-system.exec_command(
-    "xdotool search --name 'terminal_workspace_main' windowactivate; echo a"
-)
+system.exec_command(f"start_or_focus_tmuxinator_session.sh terminal_workspace_main")
