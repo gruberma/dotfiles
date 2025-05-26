@@ -52,16 +52,16 @@
     prune = true
 
 [filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [https]
     proxy = 
 [http]
     proxy = 
 [remote "origin"]
-    prune = true
+	prune = true
 
 [merge]
     tool = nvimdiff
