@@ -24,3 +24,6 @@ pipx install ranger-fm
 pipx install python-language-server
 pipx install pynvim
 pipx install virtualenv
+pipx install ipython
+pipx install visidata --include-deps
+pipx inject visidata pyyaml lxml
