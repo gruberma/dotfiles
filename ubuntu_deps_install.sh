@@ -3,22 +3,22 @@
 sudo apt-get install -y \
     alacritty \
     autokey-gtk \
+    bat \
     curl \
+    exuberant-ctags \
+    eza \
+    fd-find \
+    fzf \
+    neovim \
+    numlockx \
+    pipx \
+    python3-pip \
+    ripgrep \
+    stow \
     tmux \
     tmuxinator \
-    stow \
-    neovim \
-    python3-pip \
-    eza \
-    exuberant-ctags \
-    fzf \
-    ripgrep \
-    fd-find \
-    bat \
-    pipx \
     xdotool \
     zathura \
-    numlockx \
     zsh
 
 pipx install ranger-fm
