@@ -18,6 +18,7 @@ sudo apt-get install -y \
     pipx \
     xdotool \
     zathura \
+    numlockx \
     zsh
 
 pipx install ranger-fm
