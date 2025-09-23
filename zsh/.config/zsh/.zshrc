@@ -96,6 +96,7 @@ alias branch-all='for k in `git branch | perl -pe '\''s/^..(.*?)( ->.*)?$/\1/'\'
 export CLASSPATH=".:$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
 alias antlr4='java -Xmx500M -cp "$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java -Xmx500M -cp "$HOME/.local/lib/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+alias weather='curl v2.wttr.in'
 #}}}
 
 # vim:foldmethod=marker
