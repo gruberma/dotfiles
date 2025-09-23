@@ -107,8 +107,14 @@ if [[ `uname -r` == *"microsoft-standard-WSL2"* ]]; then
 fi
 
 # bookmarks
-if [ -d "$HOME/.bookmarks" ]; then
-    export CDPATH=".:$HOME/.bookmarks:/"
-    alias goto="cd -P"
-    alias j="cd -P"
-fi
+BOOKMARKS_DIR="$HOME/.bookmarks"
+_goto_completion() {
+  local bookmarks
+  bookmarks=(${(f)"$(ls $BOOKMARKS_DIR)"})
+  compadd "$@" $bookmarks
+}
+compdef _goto_completion goto
+goto() {
+  cd -P "$BOOKMARKS_DIR/$@"
+}
+alias j=goto
