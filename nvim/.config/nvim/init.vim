@@ -403,6 +403,7 @@ command! -nargs=* Rg call fzf#run({
 nnoremap <A-f> :Files<CR>
 nnoremap <A-r> :Rg<CR>
 nnoremap <A-b> :Buffers<CR>
+nnoremap <A-l> :Lines<CR>
 
 " Neomake. Run only on write if on battery.
 function! OnBattery()
