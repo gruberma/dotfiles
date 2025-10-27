@@ -594,4 +594,4 @@ vnoremap ; :normal ;<CR>
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Search and replace visualized text
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
