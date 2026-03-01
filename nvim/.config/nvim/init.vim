@@ -223,8 +223,8 @@ let g:loaded_python_provider = 0  " Disable Python2
 "------------------------------------------------------------
 " Mappings
 "------------------------------------------------------------
-let mapleader='ö'
-let maplocalleader='ö'
+let mapleader=' '
+let maplocalleader=' '
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
