@@ -1,0 +1,5 @@
+output = system.exec_command("date +'%H:%M\n'")
+keyboard.send_keys(output)
+keyboard.send_keys("<home>")
+keyboard.send_keys("<right>")
+keyboard.send_keys("<right>")
