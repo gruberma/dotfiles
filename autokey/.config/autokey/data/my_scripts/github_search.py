@@ -1,7 +1,13 @@
+import os
 import subprocess
 import urllib
 
-GITHUB_URL = "https://github.com"
+config_path = os.path.expanduser("~/.config/github_url")
+try:
+    with open(config_path) as f:
+        GITHUB_URL = f.read().strip()
+except FileNotFoundError:
+    GITHUB_URL = "https://github.com"
 
 ret_code, user_input = dialog.input_dialog(title="GitHub search")
 
